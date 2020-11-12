@@ -1,4 +1,4 @@
-module github.com/centrifugal/centrifuge
+module github.com/vadimkozak/centrifuge
 
 go 1.12
 
