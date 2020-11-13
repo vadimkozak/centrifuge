@@ -3,6 +3,7 @@ package centrifuge
 import (
 	"bytes"
 	"crypto/tls"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"hash/fnv"
@@ -76,6 +77,13 @@ var _ Engine = (*RedisEngine)(nil)
 
 type redisConnPool interface {
 	Get() redis.Conn
+}
+
+type PublishGeoAPICommand struct {
+	Longitude float64 `json:"longitude"`
+	Latitude  float64 `json:"latitude"`
+	Bearing   float64 `json:"bearing"`
+	DriverId  int     `json:"driverId"`
 }
 
 // shard has everything to connect to Redis instance.
@@ -455,7 +463,6 @@ if ARGV[4] ~= '' then
 end
 return {offset, epoch}
 		`
-
 	// addHistoryStreamSource contains Lua script to save data to Redis stream and
 	// publish it into channel.
 	// KEYS[1] - history stream key
@@ -1116,6 +1123,16 @@ func (s *shard) runPublishPipeline() {
 		conn := s.pool.Get()
 		for i := range prs {
 			_ = conn.Send("PUBLISH", prs[i].channel, prs[i].message)
+
+			var publication protocol.Publication
+			err := publication.Unmarshal(prs[i].message)
+			if err == nil {
+				var geoMessage PublishGeoAPICommand
+				geoErr := json.Unmarshal(publication.Data, &geoMessage)
+				if geoErr == nil {
+					_ = conn.Send("GEOADD", "geo:locations:Drivers", geoMessage.Longitude, geoMessage.Latitude, geoMessage.DriverId)
+				}
+			}
 		}
 		err := conn.Flush()
 		if err != nil {
@@ -1146,6 +1163,7 @@ const (
 	dataOpRemovePresence
 	dataOpPresence
 	dataOpHistory
+	dataOpGeo
 	dataOpAddHistory
 	dataOpHistoryRemove
 	dataOpChannels
@@ -1229,6 +1247,8 @@ func (s *shard) processClusterDataRequest(dr dataRequest) (interface{}, error) {
 		} else {
 			reply, err = s.addHistoryScript.Do(conn, dr.args...)
 		}
+	case dataOpGeo:
+		break
 	case dataOpHistoryRemove:
 		reply, err = conn.Do("DEL", dr.args...)
 	case dataOpChannels:
@@ -1238,6 +1258,7 @@ func (s *shard) processClusterDataRequest(dr dataRequest) (interface{}, error) {
 }
 
 func (s *shard) runDataPipeline() {
+
 	conn := s.pool.Get()
 	scripts := []*redis.Script{
 		s.addPresenceScript,
