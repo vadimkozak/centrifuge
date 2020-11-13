@@ -1,6 +1,6 @@
 package controlproto
 
-import "github.com/vadimkozak/centrifuge/v1/internal/controlpb"
+import "github.com/vadimkozak/centrifuge/v2/internal/controlpb"
 
 // Decoder ...
 type Decoder interface {
