@@ -2,7 +2,7 @@ module github.com/vadimkozak/centrifuge/v1/_examples
 
 go 1.14
 
-replace github.com/vadimkozak/centrifuge/v1 => ../
+replace github.com/vadimkozak/centrifuge/v2 => ../
 
 require (
 	github.com/centrifugal/centrifuge v0.8.2
@@ -22,7 +22,7 @@ require (
 	github.com/prometheus/common v0.10.0 // indirect
 	github.com/prometheus/procfs v0.1.3 // indirect
 	github.com/stretchr/testify v1.5.1
-	github.com/vadimkozak/centrifuge/v1 v2.0.0-00010101000000-000000000000
+	github.com/vadimkozak/centrifuge/v2 v2.0.0-00010101000000-000000000000
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
 	golang.org/x/sys v0.0.0-20200610111108-226ff32320da // indirect
 	google.golang.org/protobuf v1.24.0 // indirect
