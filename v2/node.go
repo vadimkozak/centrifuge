@@ -73,7 +73,7 @@ const (
 // New creates Node with provided Config.
 func New(c Config) (*Node, error) {
 	uid := uuid.Must(uuid.NewRandom()).String()
-
+	fmt.Println("test")
 	subLocks := make(map[int]*sync.Mutex, numSubLocks)
 	for i := 0; i < numSubLocks; i++ {
 		subLocks[i] = &sync.Mutex{}
