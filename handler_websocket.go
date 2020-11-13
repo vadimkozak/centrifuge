@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/centrifugal/centrifuge/internal/cancelctx"
-	"github.com/centrifugal/centrifuge/internal/timers"
+	"github.com/vadimkozak/centrifuge/v2/internal/cancelctx"
+	"github.com/vadimkozak/centrifuge/v2/internal/timers"
 
 	"github.com/gorilla/websocket"
 )

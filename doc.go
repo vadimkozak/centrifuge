@@ -5,7 +5,7 @@
 //
 // Centrifuge library provides several features on top of plain Websocket
 // implementation - read highlights in library README on Github –
-// https://github.com/centrifugal/centrifuge.
+// https://github.com/vadimkozak/centrifuge/v2.
 //
 // The API of this library is almost all goroutine-safe except cases where
 // one-time operations like setting callback handlers performed, also your

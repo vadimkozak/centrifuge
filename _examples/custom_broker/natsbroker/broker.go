@@ -9,8 +9,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/centrifugal/centrifuge"
 	"github.com/nats-io/nats.go"
+	"github.com/vadimkozak/centrifuge/v2"
 )
 
 type (

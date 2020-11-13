@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/centrifugal/centrifuge/internal/prepared"
+	"github.com/vadimkozak/centrifuge/v2/internal/prepared"
 
 	"github.com/centrifugal/protocol"
 	"github.com/stretchr/testify/require"

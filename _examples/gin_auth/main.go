@@ -10,10 +10,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/centrifugal/centrifuge"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
+	"github.com/vadimkozak/centrifuge/v2"
 )
 
 type clientMessage struct {

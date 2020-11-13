@@ -4,9 +4,9 @@ import (
 	"context"
 	"sync"
 
-	"github.com/centrifugal/centrifuge/internal/clientproto"
-	"github.com/centrifugal/centrifuge/internal/prepared"
-	"github.com/centrifugal/centrifuge/internal/recovery"
+	"github.com/vadimkozak/centrifuge/v2/internal/clientproto"
+	"github.com/vadimkozak/centrifuge/v2/internal/prepared"
+	"github.com/vadimkozak/centrifuge/v2/internal/recovery"
 
 	"github.com/centrifugal/protocol"
 )

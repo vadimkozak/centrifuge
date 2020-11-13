@@ -13,7 +13,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/centrifugal/centrifuge/internal/timers"
+	"github.com/vadimkozak/centrifuge/v2/internal/timers"
 
 	"github.com/FZambia/sentinel"
 	"github.com/centrifugal/protocol"

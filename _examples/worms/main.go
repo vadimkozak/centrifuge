@@ -10,7 +10,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/centrifugal/centrifuge"
+	"github.com/vadimkozak/centrifuge/v2"
 )
 
 type event struct {

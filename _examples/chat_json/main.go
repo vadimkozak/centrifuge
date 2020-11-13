@@ -14,8 +14,8 @@ import (
 
 	_ "net/http/pprof"
 
-	"github.com/centrifugal/centrifuge"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/vadimkozak/centrifuge/v2"
 )
 
 type clientMessage struct {

@@ -1,9 +1,9 @@
 [![Join the chat at https://t.me/joinchat/ABFVWBE0AhkyyhREoaboXQ](https://img.shields.io/badge/Telegram-Group-blue.svg)](https://t.me/joinchat/ABFVWBE0AhkyyhREoaboXQ)
-[![Build Status](https://github.com/centrifugal/centrifuge/workflows/build/badge.svg?branch=master)](https://github.com/centrifugal/centrifuge/actions)
+[![Build Status](https://github.com/vadimkozak/centrifuge/v2/workflows/build/badge.svg?branch=master)](https://github.com/vadimkozak/centrifuge/v2/actions)
 [![codecov.io](https://codecov.io/gh/centrifugal/centrifuge/branch/master/graphs/badge.svg)](https://codecov.io/github/centrifugal/centrifuge?branch=master)
-[![GoDoc](https://pkg.go.dev/badge/centrifugal/centrifuge)](https://pkg.go.dev/github.com/centrifugal/centrifuge)
+[![GoDoc](https://pkg.go.dev/badge/centrifugal/centrifuge)](https://pkg.go.dev/github.com/vadimkozak/centrifuge/v2)
 
-**This library has no v1 release yet, API still evolves. Use with strict versioning.** At this moment patch version updates only have backwards compatible changes and fixes, minor version updates can have backwards-incompatible API changes. See [v1.0.0 milestone](https://github.com/centrifugal/centrifuge/milestone/1). Master branch can have unreleased code.
+**This library has no v1 release yet, API still evolves. Use with strict versioning.** At this moment patch version updates only have backwards compatible changes and fixes, minor version updates can have backwards-incompatible API changes. See [v1.0.0 milestone](https://github.com/vadimkozak/centrifuge/v2/milestone/1). Master branch can have unreleased code.
 
 Centrifuge library is a real-time core of [Centrifugo](https://github.com/centrifugal/centrifugo) server. It's also supposed to be a general purpose real-time messaging library for Go programming language. The library built on top of strict client-server protocol schema and exposes various real-time oriented primitives for a developer. Centrifuge solves several problems a developer may come across when building complex real-time applications – like scalability (millions of connections), proper persistent connection management and invalidation, fast reconnect with message recovery, WebSocket fallback option.
 
@@ -27,21 +27,21 @@ Library highlights:
 
 Client libraries:
 
-* [centrifuge-js](https://github.com/centrifugal/centrifuge-js) – for a browser, NodeJS and React Native
-* [centrifuge-go](https://github.com/centrifugal/centrifuge-go) - for Go language
-* [centrifuge-mobile](https://github.com/centrifugal/centrifuge-mobile) - for iOS/Android with `centrifuge-go` as basis and [gomobile](https://github.com/golang/mobile)
-* [centrifuge-dart](https://github.com/centrifugal/centrifuge-dart) - for Dart and Flutter
-* [centrifuge-swift](https://github.com/centrifugal/centrifuge-swift) – for native iOS development
-* [centrifuge-java](https://github.com/centrifugal/centrifuge-java) – for native Android development and general Java
+* [centrifuge-js](https://github.com/vadimkozak/centrifuge/v2-js) – for a browser, NodeJS and React Native
+* [centrifuge-go](https://github.com/vadimkozak/centrifuge/v2-go) - for Go language
+* [centrifuge-mobile](https://github.com/vadimkozak/centrifuge/v2-mobile) - for iOS/Android with `centrifuge-go` as basis and [gomobile](https://github.com/golang/mobile)
+* [centrifuge-dart](https://github.com/vadimkozak/centrifuge/v2-dart) - for Dart and Flutter
+* [centrifuge-swift](https://github.com/vadimkozak/centrifuge/v2-swift) – for native iOS development
+* [centrifuge-java](https://github.com/vadimkozak/centrifuge/v2-java) – for native Android development and general Java
 
-See [Documentation](https://pkg.go.dev/github.com/centrifugal/centrifuge) and [examples](https://github.com/centrifugal/centrifuge/tree/master/_examples). You can also consider [Centrifugo server documentation](https://centrifugal.github.io/centrifugo/) as extra doc for this package (because it's built on top of Centrifuge library).
+See [Documentation](https://pkg.go.dev/github.com/vadimkozak/centrifuge/v2) and [examples](https://github.com/vadimkozak/centrifuge/v2/tree/master/_examples). You can also consider [Centrifugo server documentation](https://centrifugal.github.io/centrifugo/) as extra doc for this package (because it's built on top of Centrifuge library).
 
 ### Installation
 
 To install use:
 
 ```bash
-go get github.com/centrifugal/centrifuge
+go get github.com/vadimkozak/centrifuge/v2
 ```
 
 `go mod` is a recommended way of adding this library to your project dependencies.
@@ -60,7 +60,7 @@ import (
 	"net/http"
 
 	// Import this library.
-	"github.com/centrifugal/centrifuge"
+	"github.com/vadimkozak/centrifuge/v2"
 )
 
 // Authentication middleware. Centrifuge expects Credentials with current user ID.
@@ -231,7 +231,7 @@ Let's describe some aspects related to connection life cycle and event handling 
 * Client initiated request handlers called one by one from connection reading goroutine. This includes `OnSubscribe`, `OnPublish`, `OnPresence`, `OnPresenceStats`, `OnHistory`, client-side `OnRefresh`, client-side `OnSubRefresh`.
 * Other handlers like `OnAlive`, `OnDisconnect`, server-side `OnSubRefresh`, server-side `OnRefresh` called from separate internal goroutines.
 * `OnAlive` handler must not be called after `OnDisconnect`.
-* Client initiated request handlers can be processed asynchronously in goroutines to manage operation concurrency. This is achieved using callback functions. See [concurrency](https://github.com/centrifugal/centrifuge/tree/master/_examples/concurrency) example for more details.
+* Client initiated request handlers can be processed asynchronously in goroutines to manage operation concurrency. This is achieved using callback functions. See [concurrency](https://github.com/vadimkozak/centrifuge/v2/tree/master/_examples/concurrency) example for more details.
 
 #### Channel history stream
 

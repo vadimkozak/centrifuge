@@ -10,7 +10,7 @@ import (
 
 	_ "net/http/pprof"
 
-	"github.com/centrifugal/centrifuge"
+	"github.com/vadimkozak/centrifuge/v2"
 )
 
 func handleLog(e centrifuge.LogEntry) {

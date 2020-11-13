@@ -12,9 +12,9 @@ import (
 
 	_ "net/http/pprof"
 
-	"github.com/centrifugal/centrifuge/_examples/jwt_token/jwt"
+	"github.com/vadimkozak/centrifuge/v2/_examples/jwt_token/jwt"
 
-	"github.com/centrifugal/centrifuge"
+	"github.com/vadimkozak/centrifuge/v2"
 )
 
 type clientMessage struct {

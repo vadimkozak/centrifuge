@@ -5,9 +5,9 @@ import (
 	"net"
 	"sync"
 
-	"github.com/centrifugal/centrifuge"
 	"github.com/gobwas/ws"
 	"github.com/gobwas/ws/wsutil"
+	"github.com/vadimkozak/centrifuge/v2"
 )
 
 const websocketTransportName = "websocket"

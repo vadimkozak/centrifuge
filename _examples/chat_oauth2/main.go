@@ -17,10 +17,10 @@ import (
 
 	_ "net/http/pprof"
 
-	"github.com/centrifugal/centrifuge"
 	"github.com/dchest/uniuri"
 	"github.com/gorilla/mux"
 	"github.com/gorilla/sessions"
+	"github.com/vadimkozak/centrifuge/v2"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 )

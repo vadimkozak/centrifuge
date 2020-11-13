@@ -1,6 +1,6 @@
 package controlproto
 
-import "github.com/centrifugal/centrifuge/internal/controlpb"
+import "github.com/vadimkozak/centrifuge/v2/internal/controlpb"
 
 // Encoder ...
 type Encoder interface {

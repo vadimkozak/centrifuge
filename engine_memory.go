@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/centrifugal/centrifuge/internal/memstream"
-	"github.com/centrifugal/centrifuge/internal/priority"
+	"github.com/vadimkozak/centrifuge/v2/internal/memstream"
+	"github.com/vadimkozak/centrifuge/v2/internal/priority"
 )
 
 // MemoryEngine is builtin default Engine which allows to run Centrifuge-based
