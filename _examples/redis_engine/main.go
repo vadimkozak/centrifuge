@@ -13,7 +13,7 @@ import (
 
 	_ "net/http/pprof"
 
-	"github.com/vadimkozak/centrifuge/v2"
+	"github.com/vadimkozak/centrifuge/v1"
 )
 
 var (

@@ -8,10 +8,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/vadimkozak/centrifuge/v2/internal/controlpb"
-	"github.com/vadimkozak/centrifuge/v2/internal/controlproto"
-	"github.com/vadimkozak/centrifuge/v2/internal/dissolve"
-	"github.com/vadimkozak/centrifuge/v2/internal/nowtime"
+	"github.com/vadimkozak/centrifuge/v1/internal/controlpb"
+	"github.com/vadimkozak/centrifuge/v1/internal/controlproto"
+	"github.com/vadimkozak/centrifuge/v1/internal/dissolve"
+	"github.com/vadimkozak/centrifuge/v1/internal/nowtime"
 
 	"github.com/FZambia/eagle"
 	"github.com/centrifugal/protocol"
@@ -324,7 +324,7 @@ func (n *Node) cleanNodeInfo() {
 // development.
 // It does not scale well for massive deployments with large number of active
 // channels since response can be large.
-// Deprecated. See https://github.com/vadimkozak/centrifuge/v2/issues/147.
+// Deprecated. See https://github.com/vadimkozak/centrifuge/v1/issues/147.
 func (n *Node) Channels() ([]string, error) {
 	return n.broker.Channels()
 }

@@ -18,7 +18,7 @@ import (
 
 	"github.com/gobwas/ws"
 	"github.com/mailru/easygo/netpoll"
-	"github.com/vadimkozak/centrifuge/v2"
+	"github.com/vadimkozak/centrifuge/v1"
 )
 
 var (

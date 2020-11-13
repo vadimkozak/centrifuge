@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/vadimkozak/centrifuge/v2/internal/cancelctx"
+	"github.com/vadimkozak/centrifuge/v1/internal/cancelctx"
 
 	"github.com/gorilla/websocket"
 	"github.com/igm/sockjs-go/v3/sockjs"

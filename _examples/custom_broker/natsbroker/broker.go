@@ -10,7 +10,7 @@ import (
 	"sync"
 
 	"github.com/nats-io/nats.go"
-	"github.com/vadimkozak/centrifuge/v2"
+	"github.com/vadimkozak/centrifuge/v1"
 )
 
 type (

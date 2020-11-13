@@ -11,7 +11,7 @@ import (
 
 	_ "net/http/pprof"
 
-	"github.com/vadimkozak/centrifuge/v2"
+	"github.com/vadimkozak/centrifuge/v1"
 )
 
 func handleLog(e centrifuge.LogEntry) {

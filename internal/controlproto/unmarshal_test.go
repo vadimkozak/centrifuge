@@ -3,7 +3,7 @@ package controlproto
 import (
 	"testing"
 
-	"github.com/vadimkozak/centrifuge/v2/internal/controlpb"
+	"github.com/vadimkozak/centrifuge/v1/internal/controlpb"
 
 	"github.com/stretchr/testify/require"
 )

@@ -142,7 +142,7 @@ type Broker interface {
 	// be used for admin needs to better understand state of system. So it's not
 	// a big problem if another Broker implementation won't support this method.
 	//
-	// Deprecated. See https://github.com/vadimkozak/centrifuge/v2/issues/147.
+	// Deprecated. See https://github.com/vadimkozak/centrifuge/v1/issues/147.
 	Channels() ([]string, error)
 }
 

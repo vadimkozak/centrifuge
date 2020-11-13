@@ -12,8 +12,8 @@ import (
 
 	_ "net/http/pprof"
 
-	"github.com/vadimkozak/centrifuge/v2"
-	"github.com/vadimkozak/centrifuge/v2/_examples/custom_broker/natsbroker"
+	"github.com/vadimkozak/centrifuge/v1"
+	"github.com/vadimkozak/centrifuge/v1/_examples/custom_broker/natsbroker"
 )
 
 var (

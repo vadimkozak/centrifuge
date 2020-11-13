@@ -3,7 +3,7 @@ package centrifuge
 import (
 	"sync"
 
-	"github.com/vadimkozak/centrifuge/v2/internal/queue"
+	"github.com/vadimkozak/centrifuge/v1/internal/queue"
 )
 
 type writerConfig struct {

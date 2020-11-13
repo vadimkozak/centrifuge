@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/vadimkozak/centrifuge/v2"
+	"github.com/vadimkozak/centrifuge/v1"
 )
 
 func newTestNatsBroker() *NatsBroker {
